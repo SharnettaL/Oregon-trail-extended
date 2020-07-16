@@ -11,27 +11,26 @@ getAvailableSeatCount(){
     return this.capacity - this.passengers.length
 }  
 
-join(traveler){
+join(Traveler){
     if(this.getAvailableSeatCount()>= 1){
-        this.passengers.push(traveler)
+        this.passengers.push(Traveler)
     }
      
 }
 shouldQuarantine(){
-     for(let index = 0; index < this.passengers.length; index += 1){
-         if(this.passengers[index].isHealty === false){
+     for(let index = 0; index < this.passengers.length; index ++ ){
+         if(this.passengers[index].isHealthy === false){
             return true
          }
      }
 }
 totalFood(){
 let total = 0
- for(let index = 0; index > this.passengers.length; index += 1){
-      total += this.passengers[index].food
-    }
-    return total
-        
+ for(let index = 0; index < this.passengers.length; index ++ ){
+      total += this.passengers[index].food    
+ }
     
+    return total
 }
 
 
